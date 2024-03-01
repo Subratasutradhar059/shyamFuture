@@ -13,8 +13,6 @@ import User from "../../../../assets/Images/Logo/user.png"
 
 
 const Allusers = ({ navigation }) => {
-    const allusersw = []
-    const route = useRoute()
     const [loader, setLoader] = useState(true);
     const AuthData = useSelector(state => state?.auth)
     const [allusers, setAllUsers] = useState([]);
@@ -31,14 +29,13 @@ const Allusers = ({ navigation }) => {
 
                 }
                 setAllUsers(tempUserdata);
-                console.log("res?.wwww", tempUserdata)
-                // setLoader(false);
+
             })
             .catch(err => console.log('err', err), setLoader(false));
     }, []);
 
     const renderItem = ({ item, index }) => {
-        console.log('itejm', item);
+
         return (
             <TouchableOpacity
                 onPress={() => {
@@ -46,9 +43,6 @@ const Allusers = ({ navigation }) => {
                 }}
                 style={style.productRow}
             >
-
-
-
                 <View style={style?.iconCont}>
                     <Image
                         source={User}
@@ -64,11 +58,8 @@ const Allusers = ({ navigation }) => {
                         style={[style.fullImg]}
                     />
                 </View>
-
-
-
                 <View>
-                    {/* <Image source={GlobalI} style={style.img} /> */}
+
                 </View>
             </TouchableOpacity>
         );

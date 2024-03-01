@@ -16,7 +16,7 @@ const Home = ({ navigation }) => {
     const dispatch = useDispatch()
     const UserData = useSelector(state => state.auth)
     useEffect(() => {
-        console.log('hii');
+        // console.log('hii');
         dispatch(productRequest())
     }, [])
 
@@ -43,8 +43,6 @@ const Home = ({ navigation }) => {
     };
 
     const renderItem = ({ item }) => (
-
-
         <View style={style.itemsContainer}>
             <View style={style.appLogoStyleContainer}>
                 <Image
@@ -62,9 +60,6 @@ const Home = ({ navigation }) => {
     );
 
     return (
-
-
-
         <View style={style.container}>
             {
                 isLoading ?
@@ -74,8 +69,6 @@ const Home = ({ navigation }) => {
                             size={"learge"}
                             color={"red"}
                         />
-
-
                     </View>
                     :
                     <>
@@ -96,16 +89,11 @@ const Home = ({ navigation }) => {
                             </TouchableOpacity>
 
                         </View>
-
-
                         <FlatList
                             data={data}
                             renderItem={renderItem}
                             keyExtractor={(item) => item.id}
                         />
-
-
-
                     </>
 
             }
@@ -128,8 +116,6 @@ const Home = ({ navigation }) => {
                             // alignItems: 'center',
                             flexDirection: 'column',
                         }}>
-
-
                         <View style={{}} >
                             <TouchableOpacity style={{ alignItems: "flex-end" }} onPress={LogoutClose}>
                                 <Image
@@ -145,17 +131,11 @@ const Home = ({ navigation }) => {
                                     resizeMode="contain"
                                 />
                             </View>
-
                             <TouchableOpacity style={{ backgroundColor: "#E78895", borderRadius: 10, alignItems: "center", paddingHorizontal: 20 }} onPress={Logout} >
                                 <Text style={{ color: "white", paddingHorizontal: 20, paddingVertical: 10, fontWeight: "700" }}>Logout</Text>
                             </TouchableOpacity>
                         </View>
-
-
                     </View>
-
-
-
                 </Pressable>
             </Modal>
 

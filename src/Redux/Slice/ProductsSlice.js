@@ -18,7 +18,7 @@ const productSlice = createSlice({
             })
             .addCase(productRequest.fulfilled, (state, action) => {
                 const responseData = action.payload.data
-                console.log("action",responseData)
+                // console.log("action",responseData)
                 
                 state.isLoading = false;
                 state.data = responseData;

@@ -26,7 +26,7 @@ const Chat = ({ route, navigation }) => {
       .collection('message')
       .orderBy('createdAt', 'desc');
     subscribe.onSnapshot(querySnapshot => {
-      console.log('querySnapshot', querySnapshot);
+      // console.log('querySnapshot', querySnapshot);
       const allmessage = querySnapshot.docs.map(item => { 
         return { ...item?._data, createdAt: item?._data?.createdAt };
       });
@@ -58,16 +58,6 @@ const Chat = ({ route, navigation }) => {
       .add(myMsg);
   }, []);
 
-  const sendStyle = () => {
-    <TouchableOpacity
-      style={{
-        padding: 10,
-        backgroundColor: "red",
-        justifyContent: 'center',
-      }}>
-      <Text>SEND</Text>
-    </TouchableOpacity>;
-  };
   const Goback = () => {
     navigation.goBack()
   };

@@ -7,10 +7,9 @@ import {
   Image,
   TouchableOpacity,
   TextInput,
-  ActivityIndicator, 
+  ActivityIndicator,
   Alert,
 } from 'react-native';
-
 import { style } from './Login.styles';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -18,34 +17,31 @@ import Logo from "../../../assets/Images/Logo/logo.jpg"
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import Color from '../../../assets/Theme/Color'
 import { useDispatch, useSelector } from 'react-redux';
-
 import firestore, { firebase } from "@react-native-firebase/firestore"
 import uuid from 'react-native-uuid';
 import { addUser } from '../../Redux/Slice/AuthSlice';
 
-
-
 const Login = ({ navigation }) => {
-  const [loader, setLoader] = useState(false); 
+  const [loader, setLoader] = useState(false);
 
-  const dispatch = useDispatch(); 
+  const dispatch = useDispatch();
   // const UserId = uuid.v4() 
 
   useEffect(() => {
-    if(firebase){
+    if (firebase) {
       firebase.initializeApp()
     }
   }, [firebase])
 
   const loginUser = async (values) => {
-    try { 
+    try {
       setLoader(true)
       const response = await firestore()?.collection("users")?.doc(values?.email).set({
         email: values?.email,
         password: values?.password,
         userId: values?.email
       })
-      console.log('response', response);
+      // console.log('response', response);
       const Userdata = {
         email: values?.email,
         userId: values?.email
@@ -53,17 +49,17 @@ const Login = ({ navigation }) => {
       dispatch(addUser(Userdata))
       setLoader(false)
     } catch (error) {
-      console.log('error', error);
+      // console.log('error', error);
       dispatch(addUser(null))
       setLoader(false)
     }
   }
- 
+
   /// Handle login ///
 
-  const handleLogin = (values) => { 
+  const handleLogin = (values) => {
     if (values) {
-      loginUser(values) 
+      loginUser(values)
     } else {
       setLoader(false)
       Alert.alert('Invalid credentials', 'Please enter correct email and password.');
@@ -181,9 +177,6 @@ const Login = ({ navigation }) => {
                       <TouchableOpacity style={[style.continueButtonStyle, { backgroundColor: "#40A2E3", paddingVertical: 15, marginTop: 30 }]} onPress={() => handleSubmit()}>
                         <Text style={style.TextStyle}>Sign in</Text>
                       </TouchableOpacity>
-
-
-
                     </View>
                   )}
                 </Formik>

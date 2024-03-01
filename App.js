@@ -19,7 +19,7 @@ const App = () => {
       const result = await AsyncStorage.getItem("userData")
       dispatch(addUser(JSON.parse(result)))
     } catch (error) {
-      console.log("user error ", error)
+      // console.log("user error ", error)
       dispatch(removeUser())
     }
   }
