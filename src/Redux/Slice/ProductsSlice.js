@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { productRequest } from '../ApiAction/ProductApiRequest';
 
-
 const initialState = {
     data: [],
     isLoading: false,
@@ -18,8 +17,6 @@ const productSlice = createSlice({
             })
             .addCase(productRequest.fulfilled, (state, action) => {
                 const responseData = action.payload.data
-                // console.log("action",responseData)
-                
                 state.isLoading = false;
                 state.data = responseData;
             })

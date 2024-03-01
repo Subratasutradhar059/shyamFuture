@@ -14,13 +14,9 @@ const SplashScreen = ({ navigation }) => {
   return (
     <View style={style.container}>
      <Image source={Logo} style={style.logo} />
-      {/* <Text style={style.text}> Splash Screen</Text> */}
     </View>
   );
 };
 
-const styles = StyleSheet.create({
- 
-});
 
 export default SplashScreen;

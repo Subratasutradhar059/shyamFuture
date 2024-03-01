@@ -27,7 +27,7 @@ export const style = StyleSheet.create({
     TextStyle: {
         fontSize: 20,
         fontWeight: "800",
-        color: "black"
+        color: "white"
     },
     textInput: {
         backgroundColor: "white",
@@ -114,10 +114,4 @@ export const style = StyleSheet.create({
         justifyContent: 'center',
         marginHorizontal:20
     },
-
-
-
-
-
-
 });

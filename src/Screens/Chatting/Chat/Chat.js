@@ -11,14 +11,11 @@ import { useSelector } from 'react-redux';
 
 const Chat = ({ route, navigation }) => {
   const mydetails = useSelector(state => state.auth);
-
   const [messages, setMessages] = useState([]);
-
   const toID = route?.params?.ItemData?.userId;
   const fromID = mydetails?.userData?.userId
  
  
-
   useEffect(() => {
     const subscribe = firestore()
       .collection('chats')
@@ -26,7 +23,6 @@ const Chat = ({ route, navigation }) => {
       .collection('message')
       .orderBy('createdAt', 'desc');
     subscribe.onSnapshot(querySnapshot => {
-      // console.log('querySnapshot', querySnapshot);
       const allmessage = querySnapshot.docs.map(item => { 
         return { ...item?._data, createdAt: item?._data?.createdAt };
       });
@@ -99,7 +95,6 @@ const Chat = ({ route, navigation }) => {
         }}
         user={{
           _id: fromID,
-          // avatar:mydetails.image
         }}
       />
     </SafeAreaView>

@@ -1,5 +1,4 @@
 import { StyleSheet } from "react-native";
-import { Font } from "../../Assets/Theme/CustomeText";
 
 
 

@@ -7,7 +7,6 @@ export const style = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
-
   },
   send: {
     width: 100,
@@ -15,14 +14,9 @@ export const style = StyleSheet.create({
     tintColor: "red",
   },
   productRow: {
-    // width: '100%',
     flexDirection: 'row',
     justifyContent:"space-evenly",
-
-
     backgroundColor: "white",
-
-
     borderRadius: 8,
     marginTop: 20,
     paddingVertical:15,
@@ -33,20 +27,14 @@ export const style = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-
     elevation: 5,
   },
   iconCont: {
-
     borderRadius: 100,
-  
-  
   },
   fullImg: {
     width: 30,
     height: 30,
-
-
     borderRadius: 100,
   },
   img: {
@@ -55,21 +43,15 @@ export const style = StyleSheet.create({
     resizeMode: 'contain',
   },
   bodyText: {
+    width:200,
     fontSize: 16,
     color: "black",
     fontFamily: 'Poppins-Bold',
-
-
-
-    // marginTop: normalize(40,
   },
   appLogoStyles: {
     width: 33,
     height: 33,
-
     borderRadius: 100
-    // resizeMode: 'contain',
-    // top: 70,
   },
   imageContainer: {
     shadowColor: "black",
@@ -100,8 +82,5 @@ export const style = StyleSheet.create({
     justifyContent: "space-between",
     backgroundColor: 'rgba(62, 73, 91, 0.8)',
     width: "100%",
-
-
-
   },
 });

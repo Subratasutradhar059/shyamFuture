@@ -1,8 +1,4 @@
 import { StyleSheet } from "react-native";
-import { Font } from "../../Assets/Theme/CustomeText";
-
-
-
 export const style = StyleSheet.create({
     container: {
         flex: 1,
@@ -58,7 +54,6 @@ export const style = StyleSheet.create({
         fontFamily: 'Poppins-Medium',
         textTransform: 'capitalize',
         textAlign: 'left',
-        // marginTop: normalize(40,
       },
       HeaderContainer: {
         paddingHorizontal: 20,
@@ -81,10 +76,7 @@ export const style = StyleSheet.create({
       appLogoStyles: {
         width: 33,
         height: 33,
-    
         borderRadius: 100
-        // resizeMode: 'contain',
-        // top: 70,
       },
 
 });

@@ -1,15 +1,12 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, SafeAreaView, FlatList, Image } from 'react-native';
+import { View, Text, TouchableOpacity, ActivityIndicator, SafeAreaView, FlatList, Image } from 'react-native';
 import { style } from './Allusers.styles';
-import { useState, useCallback } from 'react'
-import { GiftedChat } from 'react-native-gifted-chat'
-import { useRoute } from '@react-navigation/native';
+import { useState } from 'react'
 import firestore from '@react-native-firebase/firestore'
 import { useSelector } from 'react-redux';
 import Back from "../../../../assets/Images/Logo/back.png"
 import Rightarrow from "../../../../assets/Images/Logo/rightarrow.png"
 import User from "../../../../assets/Images/Logo/user.png"
-
 
 
 const Allusers = ({ navigation }) => {
@@ -33,6 +30,10 @@ const Allusers = ({ navigation }) => {
             })
             .catch(err => console.log('err', err), setLoader(false));
     }, []);
+
+    const Goback = () => {
+        navigation.goBack()
+    };
 
     const renderItem = ({ item, index }) => {
 
@@ -65,21 +66,16 @@ const Allusers = ({ navigation }) => {
         );
     };
 
-    const Goback = () => {
-        navigation.goBack()
-    };
+
 
 
 
     if (loader == true) {
         return <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-
             <ActivityIndicator
                 size={"learge"}
                 color={"red"}
             />
-
-
         </View>;
     } else {
         return (

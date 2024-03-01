@@ -1,7 +1,4 @@
 import { StyleSheet } from "react-native";
-import { Font } from "../../Assets/Theme/CustomeText";
-
-
 
 export const style = StyleSheet.create({
     container: {
@@ -32,7 +29,6 @@ export const style = StyleSheet.create({
     },
     itemsContainer: {
         backgroundColor: "#fff",
-
         flexDirection: "row",
         borderBottomWidth: 1,
         borderBottomColor: '#ccc',
@@ -56,16 +52,12 @@ export const style = StyleSheet.create({
         justifyContent: "space-between",
         backgroundColor: 'rgba(62, 73, 91, 0.8)',
         width: "100%",
-
-
-
     },
     title: {
         fontSize: 16,
         fontWeight: '700',
         fontFamily: "Poppins-SemiBold",
         color: "#000",
-        // backgroundColor: "red"
     },
     description: {
         color: 'black',
@@ -80,7 +72,6 @@ export const style = StyleSheet.create({
 
     },
     productDescription: {
-        // backgroundColor: "green"
     },
     price: {
 
@@ -90,15 +81,11 @@ export const style = StyleSheet.create({
     },
 
     appLogoStyleContainer: {
-
-
     },
     appLogoStyle: {
         width: 120,
         height: 140,
         marginRight: 5
-        // resizeMode: 'contain',
-        // top: 70,
     },
     CloseStyle: {
         width: 40,
@@ -108,10 +95,7 @@ export const style = StyleSheet.create({
     appLogoStyles: {
         width: 50,
         height: 50,
-
-        borderRadius: 100
-        // resizeMode: 'contain',
-        // top: 70,
+        borderRadius:100
     },
     imageContainer: {
         shadowColor: "black",

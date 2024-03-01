@@ -18,14 +18,12 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import Color from '../../../assets/Theme/Color'
 import { useDispatch, useSelector } from 'react-redux';
 import firestore, { firebase } from "@react-native-firebase/firestore"
-import uuid from 'react-native-uuid';
 import { addUser } from '../../Redux/Slice/AuthSlice';
 
 const Login = ({ navigation }) => {
   const [loader, setLoader] = useState(false);
-
   const dispatch = useDispatch();
-  // const UserId = uuid.v4() 
+
 
   useEffect(() => {
     if (firebase) {
@@ -100,8 +98,8 @@ const Login = ({ navigation }) => {
                 <Formik
                   validationSchema={SignInSchema}
                   initialValues={{
-                    email: 'demo@yopmail.com',
-                    password: 'demo@124',
+                    email: '',
+                    password: '',
                   }}
                   onSubmit={values => {
                     handleLogin(values);
@@ -137,7 +135,7 @@ const Login = ({ navigation }) => {
                           <Text
                             style={{
                               fontSize: 16,
-                              color: "red",
+                              color: "#FF8080",
                             }}>
                             {errors.email}
                           </Text>
@@ -167,7 +165,7 @@ const Login = ({ navigation }) => {
                           <Text
                             style={{
                               fontSize: 16,
-                              color: "red",
+                              color: "#FF8080",
                             }}>
                             {errors.password}
                           </Text>

@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { style } from './Chatting.styles';
 import { useState, useCallback } from 'react'
 import { GiftedChat } from 'react-native-gifted-chat'
 
@@ -15,7 +13,6 @@ const Chatting = ({ navigation }) => {
         querySnapshot.onSnapshot(snapshoot => {
             const allMSg = snapshoot?.docs?.map(snap => {
                 let data = snap.data()
-                // console.log("data", data)
                 if (data.createdAt) {
                     return {
                         ...snap?.data(),
@@ -28,11 +25,8 @@ const Chatting = ({ navigation }) => {
                         createdAt: new Date(),
                     }
                 }
-
             });
-
             setMessages(allMSg)
-
         });
 
     }, [])
@@ -42,9 +36,6 @@ const Chatting = ({ navigation }) => {
             GiftedChat.append(previousMessages, messages),
         )
     }, [])
-
-
-
     return (
         <GiftedChat
             messages={messages}

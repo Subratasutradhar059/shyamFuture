@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, Image, ActivityIndicator, Pressable, Modal } from 'react-native';
+import { View, Text, TouchableOpacity, FlatList, Image, ActivityIndicator, Pressable, Modal } from 'react-native';
 import { style } from './Home.styles';
 import Logo from "../../../assets/Images/Logo/logo.jpg"
 import Chat from "../../../assets/Images/Logo/chat.png"
 import Close from "../../../assets/Images/Logo/close.png"
-import { useRoute } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
 import { productRequest } from '../../Redux/ApiAction/ProductApiRequest';
 import { removeUser } from '../../Redux/Slice/AuthSlice';
 
 const Home = ({ navigation }) => {
-    const route = useRoute()
     const [logoutModal, setLogoutModal] = useState(false);
     const { data, isLoading } = useSelector(state => state.products)
     const dispatch = useDispatch()
     const UserData = useSelector(state => state.auth)
+
+
     useEffect(() => {
-        // console.log('hii');
         dispatch(productRequest())
     }, [])
 
@@ -113,7 +112,6 @@ const Home = ({ navigation }) => {
                             padding: 30,
                             borderRadius: 15,
                             width: '90%',
-                            // alignItems: 'center',
                             flexDirection: 'column',
                         }}>
                         <View style={{}} >
@@ -138,8 +136,6 @@ const Home = ({ navigation }) => {
                     </View>
                 </Pressable>
             </Modal>
-
-
         </View>
 
     );
