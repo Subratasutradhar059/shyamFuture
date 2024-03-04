@@ -56,7 +56,7 @@ const Login = ({ navigation }) => {
   /// Handle login ///
 
   const handleLogin = (values) => {
-    if (values) {
+    if (values.email="demo@yopmail.com" && values.password =="demo@124") {
       loginUser(values)
     } else {
       setLoader(false)
